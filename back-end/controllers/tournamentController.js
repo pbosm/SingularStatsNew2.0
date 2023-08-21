@@ -2,6 +2,17 @@ const TournamentService = require('../services/tournamentService');
 
 class TournamentController {
 
+  static async getIndex(req, res) {
+    try {
+      const lastGames = await TournamentService.getLastGames();
+
+      return res.json({ status: 'success', data: lastGames });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ status: 'error', data: error.message });
+    }
+  }
+
   // static async getTeamInfo(req, res) {
   //   try {
   //     const { id } = req.params;
@@ -13,17 +24,6 @@ class TournamentController {
   //     return res.status(500).json({ status: 'error', data: error.message });
   //   }
   // }
-
-  static async getIndex(req, res) {
-    try {
-      const lastGames = await TournamentService.getLastGames();
-
-      return res.json({ status: 'success', data: lastGames });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ status: 'error', data: error.message });
-    }
-  }
 
 }
 
