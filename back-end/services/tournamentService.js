@@ -4,20 +4,6 @@ const { Op } = require('sequelize');
 
 class TournamentService {
 
-  // static async getTeamInfo(id) {
-  //   try {
-  //     const TeamInfo = await Tournament.findByPk(id);
-
-  //     if (!TeamInfo) {
-  //       throw new Error(`Tournament com id ${id} não encontrado.`);
-  //     }
-
-  //     return TeamInfo;
-  //   } catch (error) {
-  //     throw new Error(`Erro ao encontrar o Tournament. ${error.message}`);
-  //   }
-  // }
-
   static async getLastGames() {
     try {
       const getIndexData = await Tournament.findAll({
@@ -75,6 +61,20 @@ class TournamentService {
       throw new Error(`Erro ao buscar os dados. ${error.message}`);
     }
   }
+
+  // static async getTeamInfo(id) {
+  //   try {
+  //     const TeamInfo = await Tournament.findByPk(id);
+
+  //     if (!TeamInfo) {
+  //       throw new Error(`Tournament com id ${id} não encontrado.`);
+  //     }
+
+  //     return TeamInfo;
+  //   } catch (error) {
+  //     throw new Error(`Erro ao encontrar o Tournament. ${error.message}`);
+  //   }
+  // }
 
 }
 
