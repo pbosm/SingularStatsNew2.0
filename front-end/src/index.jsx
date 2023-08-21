@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './App.css';
@@ -6,9 +5,7 @@ import './App.css';
 const root = document.getElementById('root');
 
 const app = (
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <App />
 );
 
 const rootElement = createRoot(root);
