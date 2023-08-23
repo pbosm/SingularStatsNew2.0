@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+require('dotenv').config();
 
 // Middleware para permitir o CORS (Cross-Origin Resource Sharing)
 app.use(cors());
@@ -13,8 +14,9 @@ app.use(express.json());
 const tournamentRouter = require('./routes/routeDataInfos');
 app.use('/api/data/index', tournamentRouter);
 
-// Inicia o servidor na porta 3000
-const PORT = 3300;
+// Inicia o servidor
+const PORT = process.env.PORT;
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
