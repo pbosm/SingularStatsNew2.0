@@ -1,5 +1,5 @@
-const Tournament = require('../models/tournament');
-const sequelize = require('../db/database');
+const Tournament = require('../../models/tournamentStats/tournamentStats');
+const sequelize = require('../../db/database');
 const { Op } = require('sequelize');
 
 class TournamentService {

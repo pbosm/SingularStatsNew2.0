@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // Configuração das rotas
-const tournamentRouter = require('./routes/routeDataInfos');
-app.use('/api/data/index', tournamentRouter);
+const tournamentStatsRouter = require('./routes/tournamentStats/tournamentsStatsRouter');
+app.use('/api/data/index', tournamentStatsRouter);
 
 // Inicia o servidor
 const PORT = process.env.PORT;
