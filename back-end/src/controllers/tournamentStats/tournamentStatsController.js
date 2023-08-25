@@ -1,30 +1,18 @@
-const TournamentService = require('../../services/tournamentStats/tournamentStatsService');
+const TournamentStatsService = require('../../services/tournamentStats/tournamentStatsService');
 
-class TournamentController {
+class TournamentStatsController {
 
-  static async getIndex(req, res) {
+  static async getLastGames(req, res) {
     try {
-      const lastGames = await TournamentService.getLastGames();
+      const tournamentStats = await TournamentStatsService.actionIndex();
 
-      return res.json({ status: 'success', data: lastGames });
+      return res.json({ status: 'success', data: tournamentStats });
     } catch (error) {
       console.error(error);
       return res.status(500).json({ status: 'error', data: error.message });
     }
   }
 
-  // static async getTeamInfo(req, res) {
-  //   try {
-  //     const { id } = req.params;
-  //     const TeamInfo = await TournamentService.getTeamInfo(id);
-
-  //     return res.json({ status: 'success', data: TeamInfo });
-  //   } catch (error) {
-  //     console.error(error);
-  //     return res.status(500).json({ status: 'error', data: error.message });
-  //   }
-  // }
-
 }
 
-module.exports = TournamentController;
+module.exports = TournamentStatsController;

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const db = require('../../db/database');
+const db = require('../db/database');
 
-const Cblol = db.define('Cblol', {
+const CBLOL = db.define('CBLOL', {
   gameid: {
     type: DataTypes.STRING(21),
     allowNull: true,
@@ -65,6 +65,7 @@ const Cblol = db.define('Cblol', {
   teamname: {
     type: DataTypes.STRING(39),
     allowNull: true,
+    primaryKey: true,
   },
   'COL 17': {
     type: DataTypes.STRING(39),
@@ -499,4 +500,4 @@ const Cblol = db.define('Cblol', {
   timestamps: false, // Remove o recurso de timestamps automáticos
 });
 
-module.exports = Cblol;
+module.exports = CBLOL;
