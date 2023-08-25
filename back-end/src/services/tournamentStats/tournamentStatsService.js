@@ -1,12 +1,13 @@
-const Tournament = require('../../models/tournamentStats/tournamentStats');
+const TournamentStats = require('../../models/tournamentStatsModel');
 const sequelize = require('../../db/database');
 const { Op } = require('sequelize');
+const moment = require('moment');
 
-class TournamentService {
+class TournamentStatsService {
 
-  static async getLastGames() {
+  static async actionIndex() {
     try {
-      const getIndexData = await Tournament.findAll({
+      const result = await TournamentStats.findAll({
         attributes: [
           'teamname',
           'league',
@@ -56,26 +57,17 @@ class TournamentService {
         limit: 20
       });
 
-      return getIndexData;
+      for (const game of result) {
+        game.result   = game.result === 1 ? 'Vitória' : 'Derrota';
+        game.datahora = moment(game.datahora).format('DD/MM/YYYY');
+      }
+
+      return result;
     } catch (error) {
       throw new Error(`Erro ao buscar os dados. ${error.message}`);
     }
   }
 
-  // static async getTeamInfo(id) {
-  //   try {
-  //     const TeamInfo = await Tournament.findByPk(id);
-
-  //     if (!TeamInfo) {
-  //       throw new Error(`Tournament com id ${id} não encontrado.`);
-  //     }
-
-  //     return TeamInfo;
-  //   } catch (error) {
-  //     throw new Error(`Erro ao encontrar o Tournament. ${error.message}`);
-  //   }
-  // }
-
 }
 
-module.exports = TournamentService;
+module.exports = TournamentStatsService;
