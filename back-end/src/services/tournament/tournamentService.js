@@ -1,4 +1,4 @@
-const TournamentStats = require('../../models/tournamentStatsModel');
+const cblol = require('../../models/cblolModel');
 const sequelize = require('../../db/database');
 const { Op } = require('sequelize');
 
@@ -16,7 +16,7 @@ class TournamentService {
                 'CBLOL': 'split 2'
             };
 
-            const result = await TournamentStats.findAll({
+            const result = await cblol.findAll({
                 attributes: [
                   'teamname',
                   'league',
