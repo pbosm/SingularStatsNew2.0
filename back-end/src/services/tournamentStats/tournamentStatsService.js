@@ -58,11 +58,68 @@ class TournamentStatsService {
       });
 
       for (const game of result) {
-        game.result   = game.result === 1 ? 'Vitória' : 'Derrota';
+        game.result = game.result === 1 ? 'Vitória' : 'Derrota';
         game.datahora = moment(game.datahora).format('DD/MM/YYYY');
       }
 
       return result;
+    } catch (error) {
+      throw new Error(`Erro ao buscar os dados. ${error.message}`);
+    }
+  }
+
+  static async search(teamname, split) {
+    try {
+      const resultSearch = await cblol.findAll({
+        attributes: [
+          'teamname',
+          [sequelize.fn('count', sequelize.col('teamname')), 'games'],
+          [
+            sequelize.literal(`SUM(duracaogame) / COUNT(teamname) / 60`),
+            'average_duration'
+          ],
+          [sequelize.fn('sum', sequelize.literal("side='Blue'")), 'total_blue_side'],
+          [
+            sequelize.literal(`SUM(result=1 and side='Blue') / SUM(side='blue') * 100`),
+            'winratio_blue'
+          ],
+          [sequelize.fn('sum', sequelize.literal("side='Red'")), 'total_red_side'],
+          [
+            sequelize.literal(`SUM(result=1 and side='Red') / SUM(side='red') * 100`),
+            'win_rate_red'
+          ],
+          [
+            sequelize.literal(`SUM(result=1) / COUNT(teamname) * 100`),
+            'win_rate_total'
+          ],
+          [
+            sequelize.literal(`SUM(firsttower) / COUNT(teamname) * 100`),
+            'first_tower_rate'
+          ],
+          [
+            sequelize.literal(`SUM(firsttower=1 and side='Blue') / SUM(side='blue') * 100`),
+            'first_tower_rate_blue'
+          ],
+          [
+            sequelize.literal(`SUM(firsttower=1 and side='Red') / SUM(side='red') * 100`),
+            'first_tower_rate_red'
+          ],
+          [
+            sequelize.literal(`SUM(firstblood) / COUNT(teamname) * 100`),
+            'first_blood_rate'
+          ],
+        ],
+        where: {
+          teamname: {
+            [Op.like]: `%${teamname}%`
+          },
+          split: split,
+          position: 'team',
+        },
+        group: ['teamname'],
+      });
+
+      return resultSearch;
     } catch (error) {
       throw new Error(`Erro ao buscar os dados. ${error.message}`);
     }
