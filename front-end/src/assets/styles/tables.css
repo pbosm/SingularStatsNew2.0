@@ -1,0 +1,51 @@
+/* switch hover color bg  */
+.table-center table:hover,
+.table-center tr:hover,
+.table-center thead:hover {
+    background: #11101a !important;
+    color: var(--white);
+}
+
+.table-center .ant-table-tbody>tr.ant-table-row:hover>td {
+    background: none !important;
+}
+
+/* set styles parent table div */
+.table-center {
+    box-shadow: 0 7px 25px rgb(0 0 0 / 50%);
+    background: #1a1a1a;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.container {
+    min-height: 100vh;
+    overflow: auto;
+    background: var(--black1);
+    padding: 50px;
+}
+
+/* color th titles */
+.table-center .ant-table-content table thead.ant-table-thead th,
+.table-center .ant-table-content table thead.ant-table-thead .ant-table-cell {
+    background: #1a1a1a;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: monospace;
+    color: rgb(118 123 187);
+    font-size: 13px;
+    box-shadow: none;
+    border-bottom: none;
+}
+
+/* remove th title before */
+.table-center .ant-table-content table thead.ant-table-thead th::before {
+    display: none;
+}
+
+/* tbody style */
+.table-center .ant-table-tbody {
+    background: #1a1a1a;
+    color: var(--white);
+}

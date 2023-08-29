@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ComponentIndex from '../views/ViewIndex';
+import ComponentIndex from '../pages/ViewIndex';
 // import ViewTournament from '../views/ViewTournament';
-import ViewNotFound from '../views/ViewNotFound';
+import ViewNotFound from '../pages/ViewNotFound';
 
 const AppRouter = () => {
   return (
