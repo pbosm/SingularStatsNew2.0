@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentIndex from '../components/ComponentIndex';
+import ComponentIndex from '../components/ComponentHome';
 
 const ViewIndex = () => {
   return (
