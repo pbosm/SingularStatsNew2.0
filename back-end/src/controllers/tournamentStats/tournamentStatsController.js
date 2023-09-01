@@ -14,8 +14,7 @@ class TournamentStatsController {
   }
 
   static async searchTeamname(req, res) {
-    // const { teamname } = req.query;
-    // const { split } = req.query;
+    // const { teamname, split } = req.query;
     const teamname = 'Red'; // para testes
     const split = 'split 2';  // para testes
 
