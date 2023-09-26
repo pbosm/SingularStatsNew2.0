@@ -5,6 +5,7 @@ const router = express.Router();
 const tournamentStatsRouter = require('./tournamentStats/tournamentsStatsRouter');
 router.use('/v1/home', tournamentStatsRouter);
 
+//rota para tournament
 const tournamentRouter = require('./tournament/tournamentRouter');
 router.use('/v1/tournament', tournamentRouter);
 

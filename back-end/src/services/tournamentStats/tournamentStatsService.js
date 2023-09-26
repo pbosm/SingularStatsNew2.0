@@ -1,4 +1,4 @@
-const cblol = require('../../models/cblolModel');
+const Cblol = require('../../models/cblolModel');
 const sequelize = require('../../db/database');
 const { Op } = require('sequelize');
 const moment = require('moment');
@@ -7,7 +7,7 @@ class TournamentStatsService {
 
   static async actionIndex() {
     try {
-      const result = await cblol.findAll({
+      const result = await Cblol.findAll({
         attributes: [
           'teamname',
           'league',
@@ -70,7 +70,7 @@ class TournamentStatsService {
 
   static async search(teamname, split) {
     try {
-      const resultSearch = await cblol.findAll({
+      const resultSearch = await Cblol.findAll({
         attributes: [
           'teamname',
           [sequelize.fn('count', sequelize.col('teamname')), 'games'],
