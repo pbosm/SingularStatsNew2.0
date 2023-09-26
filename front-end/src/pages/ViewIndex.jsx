@@ -1,10 +1,10 @@
 import React from 'react';
-import ComponentIndex from '../components/ComponentHome';
+import Home from '../components/home/index';
 
 const ViewIndex = () => {
   return (
     <div>
-      <ComponentIndex />
+      <Home />
     </div>
   );
 };
