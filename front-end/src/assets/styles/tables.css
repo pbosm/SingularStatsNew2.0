@@ -126,18 +126,21 @@ td.ant-table-cell {
     text-transform: uppercase;
     font-family: monospace;
     border: none;
-    font-size: small;
-    color: var(--white);
-}
-
-.table-center .all-teams span {
-    font-size: small !important;
     color: var(--white);
 }
 
 .table-infos {
     display: flex;
     justify-content: space-between;
+}
+
+/* margintop do body table sobre paginação*/
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-pagination.ant-pagination {
+    margin-top: 25px;
+}
+/*font size do button correta*/
+:where(.css-dev-only-do-not-override-17a39f8).ant-btn {
+    font-size: small;
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
