@@ -13,25 +13,6 @@ class TournamentStatsController {
     }
   }
 
-  static async searchTeamname(req, res) {
-    // const { teamname, split } = req.query;
-    const teamname = 'Red'; // para testes
-    const split = 'split 2';  // para testes
-
-    // if (!teamname || !split) {
-    //   return res.status(400).json({ message: 'faltam dados na consulta.' });
-    // }
-
-    try {
-      const resultSearch = await TournamentStatsService.search(teamname, split);
-
-      return res.json({ status: 'success', data: resultSearch });
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
-  }
-
 }
 
 module.exports = TournamentStatsController;
