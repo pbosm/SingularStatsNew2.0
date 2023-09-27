@@ -24,10 +24,10 @@ body {
 }
 
 .header {
-    text-align: center;
     color: #fff;
-    height: 64px;
-    background-color: #7dbcea;
+    background-color: #1c1c1c;
+    padding: 24px;
+    height: fit-content;
 }
 
 .content {

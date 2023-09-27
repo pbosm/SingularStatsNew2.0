@@ -1,13 +1,35 @@
 /* switch hover color bg  */
 .table-center table:hover,
-.table-center tr:hover,
-.table-center thead:hover {
+/* .table-center tr:hover, */
+.table-center thead:hover,
+.table-center table {
     background: #11101a !important;
     color: var(--white);
 }
 
-.table-center .ant-table-tbody>tr.ant-table-row:hover>td {
-    background: none !important;
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr.ant-table-row:hover>th,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr.ant-table-row:hover>td,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr>th.ant-table-cell-row-hover,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr>td.ant-table-cell-row-hover {
+    background: #11101a !important;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table {
+    background: #11101a !important;
+}
+
+/* remove border with td */
+td.ant-table-cell {
+    font-size: 12px;
+    color: var(--gray1);
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* remove table spining background */
+.table-global .ant-spin-container.ant-spin-blur,
+.table-global .ant-spin-container.ant-spin-blur::after {
+    background: transparent;
 }
 
 /* set styles parent table div */
@@ -23,7 +45,7 @@
     min-height: 100vh;
     overflow: auto;
     background: var(--black1);
-    padding: 50px;
+    padding: 40px;
 }
 
 /* color th titles */
@@ -36,7 +58,7 @@
     color: rgb(118 123 187);
     font-size: 13px;
     box-shadow: none;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* remove th title before */
@@ -48,4 +70,79 @@
 .table-center .ant-table-tbody {
     background: #1a1a1a;
     color: var(--white);
+}
+
+.last-games {
+    padding: 12px;
+    color: #0098ad;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 15px;
+    margin: 0px 0px 15px 15px;
+}
+
+:where(.css-dev-only-do-not-override-17a39f8).ant-spin-nested-loading .ant-spin-blur {
+    opacity: 1;
+}
+
+.ant-table-expanded-row-fixed,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>th,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder:hover>td,
+:where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-tbody>tr.ant-table-placeholder {
+    background: #1a1a1a !important;
+}
+
+.ant-empty-image svg {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(65%) saturate(280%) hue-rotate(197deg) brightness(96%) contrast(97%);
+}
+
+.ant-empty .ant-empty-description {
+    color: #767bbb;
+}
+
+.ant-table-expanded-row-fixed {
+    min-height: 200px;
+}
+
+.number-pagination .ant-pagination-item-link span svg {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(35%) saturate(680%) hue-rotate(193deg) brightness(90%) contrast(94%);
+}
+
+.number-pagination li a {
+    color: #535353 !important;
+}
+
+.number-pagination .ant-pagination-item-active {
+    background: #767bbb;
+    border: 1px #5f5f63;
+}
+
+.table-center .all-teams {
+    padding: 5px 25px;
+    background: var(--black1);
+    text-decoration: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-family: monospace;
+    border: none;
+    font-size: small;
+    color: var(--white);
+}
+
+.table-center .all-teams span {
+    font-size: small !important;
+    color: var(--white);
+}
+
+.table-infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 0px) and (max-width: 500px) {
+    .table-infos {
+        display: list-item;
+        overflow: hidden;
+    }
 }
