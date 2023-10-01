@@ -5,7 +5,7 @@ const moment = require('moment');
 
 class TournamentStatsService {
 
-  static async actionIndex() {
+  static async getLastGames() {
     try {
       const result = await Cblol.findAll({
         attributes: [

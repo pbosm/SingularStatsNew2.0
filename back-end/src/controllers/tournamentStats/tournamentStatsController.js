@@ -2,9 +2,9 @@ const TournamentStatsService = require('../../services/tournamentStats/tournamen
 
 class TournamentStatsController {
 
-  static async getLastGames(req, res) {
+  static async actionIndex(req, res) {
     try {
-      const tournamentStats = await TournamentStatsService.actionIndex();
+      const tournamentStats = await TournamentStatsService.getLastGames();
 
       return res.json({ status: 'success', data: tournamentStats });
     } catch (error) {

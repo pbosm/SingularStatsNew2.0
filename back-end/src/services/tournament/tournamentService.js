@@ -5,7 +5,7 @@ const { Op } = require('sequelize');
 
 class TournamentService {
     
-    static async actionIndex(split) {
+    static async getTournament(split) {
         try {
             const split = true ? {
                 'LCK': 'Spring',
