@@ -1,4 +1,4 @@
-import RenderImages from "../../utils/RenderImages"
+import RenderImages from "./RenderImages"
 
 
 export const columnsHome = [

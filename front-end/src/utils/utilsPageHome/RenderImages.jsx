@@ -4,7 +4,7 @@ const RenderImages = ({ imageName }) => {
     const [image, setImage] = useState(null);
 
     useEffect(() => {
-        import(`../assets/image/${imageName}.png`)
+        import(`../../assets/image/${imageName}.png`)
             .then((imageModule) => {
                 setImage(imageModule.default);
             })
