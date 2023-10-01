@@ -3,7 +3,7 @@ const router = express.Router();
 const TournamentStatsController = require('../../controllers/tournamentStats/tournamentStatsController');
 // const Cblol = require('../../models/cblolModel');
 
-router.get('/', TournamentStatsController.getLastGames);
+router.get('/', TournamentStatsController.actionIndex);
 
 // router.post('/', async (req, res) => {
 //     try {

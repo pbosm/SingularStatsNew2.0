@@ -2,9 +2,9 @@ const TournamentService = require('../../services/tournament/tournamentService')
 
 class TournamentController {
 
-  static async getTournament(req, res) {
+  static async actionIndex(req, res) {
     try {
-      const Tournament = await TournamentService.actionIndex();
+      const Tournament = await TournamentService.getTournament();
 
       return res.json({ status: 'success', data: Tournament });
     } catch (error) {
