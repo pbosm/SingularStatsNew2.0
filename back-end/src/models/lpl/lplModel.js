@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize');
-const db = require('../db/database');
-const { Op } = require('sequelize');
+const db = require('../../db/database');
 
-const Cblol = db.define('Cblol', {
+const Lpl = db.define('Lpl', {
   gameid: {
     type: DataTypes.STRING(21),
     allowNull: true,
@@ -497,65 +496,8 @@ const Cblol = db.define('Cblol', {
     allowNull: true,
   },
 }, {
-  tableName: 'cblol', // O nome da tabela no banco de dados
+  tableName: 'lpl', // O nome da tabela no banco de dados
   timestamps: false, // Remove o recurso de timestamps automáticos
 });
 
-Cblol.searchTeam = async function (teamname, split) {
-  try {
-    const result = await this.findAll({
-      attributes: [
-        'teamname',
-        [db.fn('count', db.col('teamname')), 'games'],
-        [
-          db.literal(`SUM(duracaogame) / COUNT(teamname) / 60`),
-          'average_duration'
-        ],
-        [db.fn('sum', db.literal("side='Blue'")), 'total_blue_side'],
-        [
-          db.literal(`SUM(result=1 and side='Blue') / SUM(side='blue') * 100`),
-          'winratio_blue'
-        ],
-        [db.fn('sum', db.literal("side='Red'")), 'total_red_side'],
-        [
-          db.literal(`SUM(result=1 and side='Red') / SUM(side='red') * 100`),
-          'win_rate_red'
-        ],
-        [
-          db.literal(`SUM(result=1) / COUNT(teamname) * 100`),
-          'win_rate_total'
-        ],
-        [
-          db.literal(`SUM(firsttower) / COUNT(teamname) * 100`),
-          'first_tower_rate'
-        ],
-        [
-          db.literal(`SUM(firsttower=1 and side='Blue') / SUM(side='blue') * 100`),
-          'first_tower_rate_blue'
-        ],
-        [
-          db.literal(`SUM(firsttower=1 and side='Red') / SUM(side='red') * 100`),
-          'first_tower_rate_red'
-        ],
-        [
-          db.literal(`SUM(firstblood) / COUNT(teamname) * 100`),
-          'first_blood_rate'
-        ],
-      ],
-      where: {
-        teamname: {
-          [Op.like]: `%${teamname}%`
-        },
-        split: split,
-        position: 'team',
-      },
-      group: ['teamname'],
-    });
-
-    return result;
-  } catch (error) {
-    throw new Error(`Erro ao buscar os dados. ${error.message}`);
-  }
-};
-
-module.exports = Cblol;
+module.exports = Lpl;

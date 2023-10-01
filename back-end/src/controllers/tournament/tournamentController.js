@@ -4,7 +4,10 @@ class TournamentController {
 
   static async actionIndex(req, res) {
     try {
-      const Tournament = await TournamentService.getTournament();
+      // const { split } = req.query;
+      const split = false; //fins de teste
+
+      const Tournament = await TournamentService.getTournament(split);
 
       return res.json({ status: 'success', data: Tournament });
     } catch (error) {

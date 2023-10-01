@@ -1,4 +1,4 @@
-const Cblol = require('../../models/cblolModel');
+const Cblol = require('../../models/cblol/cblolModel');
 const db = require('../../db/database');
 const { Op } = require('sequelize');
 const moment = require('moment');
