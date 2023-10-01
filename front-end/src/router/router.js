@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ComponentIndex from '../pages/ViewIndex';
+import ViewHome from '../pages/home/ViewHome';
 // import ViewTournament from '../views/ViewTournament';
-import ViewNotFound from '../pages/ViewNotFound';
+import ViewNotFound from '../pages/notFound/ViewNotFound';
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<ComponentIndex />} />
+        <Route path="/" element={<ViewHome />} />
         <Route path="*" element={<ViewNotFound />} />
       </Routes>
     </Router>

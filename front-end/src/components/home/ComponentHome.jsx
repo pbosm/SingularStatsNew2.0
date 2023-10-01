@@ -3,7 +3,7 @@ import { Button, Empty, Table } from 'antd';
 import api from '../../services/api';
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
-import { columnsHome } from './TableColumns';
+import { columnsHome } from '../../utils/utilsPageHome/TableColumns';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -30,7 +30,7 @@ const Home = () => {
     <div className="container">
       <div className="table-center">
         <div className='table-infos'>
-          <div className='last-games'>Últimos 20 jogos</div>
+          <div className='last-games'>Últimos 10 jogos</div>
           <Button className='all-teams'>Ver todos os times</Button>
         </div>
 
@@ -49,7 +49,7 @@ const Home = () => {
             emptyText: (!loadingTable) ? <Empty description='Sem dados' image={Empty.PRESENTED_IMAGE_SIMPLE} /> : <></>
           }}
           pagination={{
-            pageSize: 20,
+            pageSize: 10,
             position: ['bottomRight'],
             className: 'number-pagination'
           }}
