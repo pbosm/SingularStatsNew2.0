@@ -15,7 +15,7 @@ const RenderImages = ({ imageName }) => {
 
     return (
         <>
-            {image && <img src={image} alt="" />}
+            {image && <img src={image} alt={imageName} />}
         </>
     );
 };
