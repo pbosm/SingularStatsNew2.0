@@ -9,6 +9,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<ViewHome />} />
+        {/* <Route path="/tournament" element={<ViewTournament />} /> */}
         <Route path="*" element={<ViewNotFound />} />
       </Routes>
     </Router>

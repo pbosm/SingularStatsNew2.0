@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Empty, Table } from 'antd';
-import api from '../../services/api';
 import { LoadingOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
 import { columnsHome } from '../../utils/utilsPageHome/TableColumns';
+import { Spin } from 'antd';
+import '../../assets/styles/styleComponentHome/home.css';
+import api from '../../services/api';
 
 const Home = () => {
   const [data, setData] = useState([]);

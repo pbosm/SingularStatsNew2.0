@@ -3,9 +3,7 @@ import ComponentNotFound from '../../components/notFound/ComponentNotFound';
 
 const ViewNotFound = () => {
   return (
-    <div>
-      <ComponentNotFound />
-    </div>
+    <ComponentNotFound />
   );
 };
 
