@@ -1,10 +1,11 @@
 import React from 'react';
 import { Layout } from 'antd';
 import AppRouter from './router/router';
+import Footer from './pages/footer/ViewFooter';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles/global.css';
-import './assets/styles/tables.css';
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 
 const App = () => (
   <Layout>
@@ -14,9 +15,7 @@ const App = () => (
     <Content className='content'>
       <AppRouter />
     </Content>
-    <Footer className='footer'>
-      Footer
-    </Footer>
+    <Footer />
   </Layout>
 );
 

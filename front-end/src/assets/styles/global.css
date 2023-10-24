@@ -30,14 +30,13 @@ body {
     height: fit-content;
 }
 
-.content {
-    text-align: 'center';
-    min-height: '500px';
-    line-height: '500px'
+/*minimo de altura para o content global*/
+main.ant-layout-content.content.css-dev-only-do-not-override-17a39f8 {
+    min-height: 455px;
 }
 
-.footer {
-    text-align: center;
-    color: #fff;
-    background-color: #7dbcea;
+/*container global minima altura*/
+.container {
+    max-width: 1500px;
+    min-height: 455px;
 }

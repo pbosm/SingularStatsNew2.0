@@ -79,7 +79,6 @@ td.ant-table-cell {
     text-transform: uppercase;
     font-family: monospace;
     font-size: 15px;
-    margin: 0px 0px 15px 15px;
 }
 
 :where(.css-dev-only-do-not-override-17a39f8).ant-spin-nested-loading .ant-spin-blur {
@@ -138,14 +137,70 @@ td.ant-table-cell {
 :where(.css-dev-only-do-not-override-17a39f8).ant-table-wrapper .ant-table-pagination.ant-pagination {
     margin-top: 25px;
 }
+
 /*font size do button correta*/
 :where(.css-dev-only-do-not-override-17a39f8).ant-btn {
     font-size: small;
+}
+
+/*tirar opacity na hora do loading dos table*/
+:where(.css-dev-only-do-not-override-17a39f8).ant-spin-nested-loading .ant-spin-blur::after {
+    opacity: 0;
+    pointer-events: auto;
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
     .table-infos {
         display: list-item;
         overflow: hidden;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 100% !important;
+    }
+}
+
+/* Para telas grandes (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1380px;
+    }
+}
+
+/* Para telas médias (min-width: 992px) */
+@media (min-width: 992px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 1180px;
+    }
+}
+
+/* Para telas pequenas (min-width: 768px) */
+@media (min-width: 768px) {
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 990px;
+    }
+}
+
+/* Para telas muito pequenas (min-width: 576px) */
+@media (min-width: 576px) {
+    .container,
+    .container-sm {
+        max-width: 770px;
     }
 }
