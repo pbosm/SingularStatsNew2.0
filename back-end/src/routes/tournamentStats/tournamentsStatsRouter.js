@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const TournamentStatsController = require('../../controllers/tournamentStats/tournamentStatsController');
-// const Cblol = require('../../models/cblolModel');
+// const Cblol = require('../../models/cblol/cblolModel');
 
 router.get('/', TournamentStatsController.actionIndex);
 
