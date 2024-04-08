@@ -8,7 +8,7 @@ import logo from '../../assets/image/icone.png';
 
 const { Footer } = Layout;
 
-const CustomFooter = () => {
+const ComponentFooter = () => {
     return (
         <Footer className="custom-footer">
             <section className="custom-footer-head d-flex justify-content-center justify-content-lg-between border-bottom">
@@ -73,13 +73,13 @@ const CustomFooter = () => {
             </section>
 
             <section className="custom-footer-bottom mt-3">
-                <div class="text-center p-4" style={{ backgroundColor: ' rgba(0, 0, 0, 0.125)' }}>
+                <div className="text-center p-3" style={{ backgroundColor: ' rgba(0, 0, 0, 0.125)' }}>
                     © 2021 Copyright:
-                    <a class="text-reset fw-bold" href="https://singularstats.herokuapp.com"> singularstats.herokuapp.com</a>
+                    <a className="text-reset fw-bold" href="https://singularstats.herokuapp.com"> singularstats.herokuapp.com</a>
                 </div>
             </section>
         </Footer>
     );
 };
 
-export default CustomFooter;
+export default ComponentFooter;

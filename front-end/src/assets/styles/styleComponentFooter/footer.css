@@ -1,7 +1,7 @@
 /* Footer Styles */
 .custom-footer {
     background-color: #f8f9fa;
-    padding: 20px 0;
+    padding: 1px;
     color: #6c757d;
     text-align: center; /* Centralize o conteúdo do footer */
 }
@@ -22,8 +22,12 @@
 }
 
 .custom-footer-container {
-    max-width: 1400px;
+    width: 100%; /* Alterado para largura de 100% */
     margin: 0 auto; /* Centralize o conteúdo no contêiner */
+}
+
+.custom-footer-section {
+    padding: 20px; /* Adicionado um espaçamento interno para evitar que o conteúdo toque nas bordas */
 }
 
 footer.ant-layout-footer.custom-footer.css-dev-only-do-not-override-17a39f8 {
@@ -31,19 +35,6 @@ footer.ant-layout-footer.custom-footer.css-dev-only-do-not-override-17a39f8 {
 }
 
 :where(.css-dev-only-do-not-override-17a39f8).ant-layout-footer {
-    padding: 15px 50px;
-    font-size: 14px;
-    background: #f5f5f5;
-}
-
-:where(.css-dev-only-do-not-override-17a39f8).ant-layout-footer {
-    padding: 1px 1px;
-    font-size: 14px;
-    background: #f5f5f5;
-}
-
-:where(.css-dev-only-do-not-override-17a39f8).ant-layout-footer {
-    padding: 1px 1px;
     font-size: 14px;
     background: #f5f5f5;
 }

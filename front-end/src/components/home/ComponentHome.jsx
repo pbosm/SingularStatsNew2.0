@@ -4,26 +4,24 @@ import { LoadingOutlined } from '@ant-design/icons';
 import { columnsHome } from '../../utils/utilsPageHome/TableColumns';
 import { Spin } from 'antd';
 import '../../assets/styles/styleComponentHome/home.css';
-import api from '../../services/api';
+import TournamentProvider from '../../services/provider/TournamentProvider';
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [loadingTable, setLoadingTable] = useState(true);
+  const [tournamentProviderInstance] = useState(() => new TournamentProvider());
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await api.get('/home');
-
-        setData(response.data.data);
-      } catch (error) {
-        setLoadingTable(false);
-        console.error(error);
-      }
+    function getData() {
+        tournamentProviderInstance.getLastGames().then(statsTournament => {
+          setData(statsTournament.data.data);
+        }).catch(error => {
+          setLoadingTable(false);
+        });
     }
 
-    fetchData();
-  }, []);
+    getData();
+  }, [tournamentProviderInstance]);
 
   const spinIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />
 

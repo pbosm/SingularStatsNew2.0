@@ -15,7 +15,7 @@ const App = () => (
     <Content className='content'>
       <AppRouter />
     </Content>
-    <Footer />
+    <Footer className="footer"/>
   </Layout>
 );
 
