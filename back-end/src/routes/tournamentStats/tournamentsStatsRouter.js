@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const TournamentStatsController = require('../../controllers/tournamentStats/tournamentStatsController');
+const TournamentStatsController = require('../../controllers/tournamentStats/TournamentStatsController');
 // const Cblol = require('../../models/cblol/cblolModel');
 
 router.get('/', TournamentStatsController.actionIndex);

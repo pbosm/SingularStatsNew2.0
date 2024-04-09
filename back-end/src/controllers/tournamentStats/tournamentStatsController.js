@@ -1,4 +1,4 @@
-const TournamentStatsService = require('../../services/tournamentStats/tournamentStatsService');
+const TournamentStatsService = require('../../services/tournamentStats/TournamentStatsService');
 
 class TournamentStatsController {
 
